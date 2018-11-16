@@ -34,6 +34,12 @@ class ServiceController extends Controller
         return response()->json(['servicios'=>$service],200);
     }
 
+    public function comprobar(Request $request)
+    {
+      $service = Service::where('nombre', $request->input('nombre'))->get(['nombre']);
+      return response()->json($service);
+    }
+
 
     /**
      * Store a newly created resource in storage.
