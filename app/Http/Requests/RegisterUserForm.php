@@ -50,6 +50,7 @@ class RegisterUserForm extends FormRequest
           'email.unique' => 'el :attribute ya se encuentra registrado en el sistema',
           'telefono.required' =>'el campo :attribute es requerido',
           'telefono.regex' =>' el campo :attribute solo se aceptan numeros',
+          'telefono.size' =>'el campo :attribute debe ser de :size digitos',
           'password.required' =>'el campo :attribute es requerido',
           'password.min' => 'el campo :attribute debe contener :min o mas caracteres'
       ];
