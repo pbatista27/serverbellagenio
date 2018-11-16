@@ -24,9 +24,9 @@ class ContactoForm extends FormRequest
     public function rules()
     {
         return [
-          'nombre' => 'required|between:3,20|regex:/^[a-zA-Z\s]+$/',
+          'nombre' => 'required|between:3,20|regex:/^[a-zA-Zñ-Ñ\s]+$/',
           'correo' => 'required|email',
-          'asunto' => 'required| between:3,80|regex:/^[a-zA-Z0-9\s]+$/',
+          'asunto' => 'required| between:3,80|regex:/^[a-zA-Zñ-Ñ0-9\s]+$/',
           'mensaje' => 'required| between:10,255'
         ];
     }

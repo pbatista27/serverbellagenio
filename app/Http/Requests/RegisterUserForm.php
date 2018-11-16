@@ -24,11 +24,11 @@ class RegisterUserForm extends FormRequest
     public function rules()
     {
         return [
-          'nombre' => 'required|between:3,20|regex:/^[a-zA-Z\s]+$/',
+          'nombre' => 'required|between:20,20|regex:/^[a-zA-Z\s]+$/',
           'apellido' => 'required|between:3,20|regex:/^[a-zA-Z\s]+$/',
           'fecha_nacimiento' =>'required|date',
           'email' => 'required|email|unique:users,email',
-          'telefono' => 'required|regex:/^[0-9]+$/',
+          'telefono' => 'required|regex:/^[a-z]+$/',
           'password' => 'required|min:8',
         ];
     }

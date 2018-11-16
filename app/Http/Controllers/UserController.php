@@ -20,6 +20,13 @@ class UserController extends Controller
     }
 
 
+    public function comprobar(Request $request) {
+      $correo = User::where('email',$request->input('correo'))->get(['email']);
+
+      return response()->json($correo);
+    }
+
+
 
     /**
      * Store a newly created resource in storage.

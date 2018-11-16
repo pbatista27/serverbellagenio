@@ -20,9 +20,9 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware'=>['cors']],function(){
 
-  Route::get('/contactos', 'ContactController@index');
   Route::post('/contactos', 'ContactController@store');
   Route::post('/registrarse', 'UserController@store');
+  Route::post('/comprobar', 'UserController@comprobar');
 
 });
 
@@ -48,6 +48,9 @@ Route::group([
   'middleware'=>['cors','admin']
 ], function(){
 
+  //contactos
+    Route::get('/contactos', 'ContactController@index');
+
   //usuarios
     Route::get('/usuarios', 'UserController@index');
     Route::get('/usuarios/{id}','UserController@show');
@@ -61,10 +64,10 @@ Route::group([
     Route::delete('bank/{id}','BankController@destroy');
 
   //servicios
-  Route::get('/service/{id}','ServiceController@show');
-  Route::post('/service','ServiceController@store');
-  Route::put('/service/{id}','ServiceController@update');
-  Route::delete('/service/{id}','ServiceController@destroy');
+    Route::get('/service/{id}','ServiceController@show');
+    Route::post('/service','ServiceController@store');
+    Route::put('/service/{id}','ServiceController@update');
+    Route::delete('/service/{id}','ServiceController@destroy');
 
 
 });

@@ -29,7 +29,7 @@ class BankController extends Controller
       }
       else
       {
-          $bank = Bank::where('estado','>',0)->get(['id','nombre','numero_cuenta','tipo_cuenta','usuario_cuenta','usuario_cedula']);//get(['nombre','numero_cuenta','tipo_cuenta','usuario_cuenta','usuario_cedula']);
+          $bank = Bank::where('estado','>',0)->get(['id','nombre','numero_cuenta','tipo_cuenta','usuario_cuenta','usuario_cedula']);
       }
         return response()->json(['bancos'=>$bank],200);
     }
