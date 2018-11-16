@@ -48,7 +48,7 @@ class UserController extends Controller
 
         $model->save();
 
-        return response()->json(['respuesta'=>'exito'],201);
+        return response()->json(['respuesta'=>'Usuario registrado con exito'],201);
     }
 
     /**
