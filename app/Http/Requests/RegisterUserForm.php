@@ -28,7 +28,7 @@ class RegisterUserForm extends FormRequest
           'apellido' => 'required|between:3,20|regex:/^[a-zA-Zñ-Ñ\s]+$/',
           'fecha_nacimiento' =>'required|date',
           'email' => 'required|email|unique:users,email',
-          'telefono' => 'required|regex:/^[0-9]+$/',
+          'telefono' => 'required|regex:/^[0-9]+$/|size:11',
           'password' => 'required|min:8',
         ];
     }
