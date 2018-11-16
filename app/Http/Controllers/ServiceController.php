@@ -82,7 +82,7 @@ class ServiceController extends Controller
 
       $model->save();
 
-      return response()->json(['respuesta'=>'Servicio guardado con exito'],201);
+      return response()->json(['respuesta'=>'Servicio editado con exito'],201);
     }
 
     /**
