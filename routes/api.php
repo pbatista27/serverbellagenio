@@ -68,6 +68,7 @@ Route::group([
     Route::post('/service','ServiceController@store');
     Route::put('/service/{id}','ServiceController@update');
     Route::delete('/service/{id}','ServiceController@destroy');
+    Route::post('/comprobar-sevicio','ServiceController@comprobar');
 
 
 });
