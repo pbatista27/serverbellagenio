@@ -35,6 +35,13 @@ class BankController extends Controller
     }
 
 
+    public function comprobar(Request $request)
+    {
+      $bank = Bank::where('numero_cuenta', $request->input('cuenta'))->get(['numero_cuenta']);
+      return response()->json($bank);
+    }
+
+
 
     /**
      * Store a newly created resource in storage.
