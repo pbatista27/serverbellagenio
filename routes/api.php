@@ -62,6 +62,7 @@ Route::group([
     Route::get('/bank/{id}','BankController@show');
     Route::put('/bank/{id}','BankController@update');
     Route::delete('/bank/{id}','BankController@destroy');
+    Route::post('/comprobar-banco', 'BankController@comprobar');
 
   //servicios
     Route::get('/service/{id}','ServiceController@show');
