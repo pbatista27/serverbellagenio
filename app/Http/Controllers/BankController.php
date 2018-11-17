@@ -44,17 +44,18 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        $bank = new Bank();
+      $bank = new Bank();
 
         $bank->nombre = $request->input('nombre');
-        $bank->numero_cuenta = $request->input('cuenta');
-        $bank->tipo_cuenta = $request->input('tipo');
-        $bank->usuario_cuenta = $request->input('nombre_titular');
-        $bank->usuario_cedula = $request->input('cedula_titular');
+        $bank->numero_cuenta = $request->input('numero_cuenta');
+        $bank->tipo_cuenta = $request->input('tipo_cuenta');
+        $bank->usuario_cuenta = $request->input('usuario_cuenta');
+        $bank->usuario_cedula = $request->input('usuario_cedula');
         $bank->estado = $request->input('estado');
 
         $bank->save();
-        return response()->json(['respuesta'=>'Banco registrado con exito'],201);
+
+        return response()->json(['respuesta'=>'Banco registrado con exito', 'id'=>$bank->id],201);
     }
 
     /**
@@ -79,10 +80,10 @@ class BankController extends Controller
     {
       $model = $bank::find($id);
       $model->nombre = $request->input('nombre');
-      $model->numero_cuenta = $request->input('cuenta');
-      $model->tipo_cuenta = $request->input('tipo');
-      $model->usuario_cuenta = $request->input('nombre_titular');
-      $model->usuario_cedula = $request->input('cedula_titular');
+      $model->numero_cuenta = $request->input('numero_cuenta');
+      $model->tipo_cuenta = $request->input('tipo_cuenta');
+      $model->usuario_cuenta = $request->input('usuario_cuenta');
+      $model->usuario_cedula = $request->input('usuario_cedula');
       $model->estado = $request->input('estado');
 
       $model->save();
