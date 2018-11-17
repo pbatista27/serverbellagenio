@@ -60,8 +60,8 @@ Route::group([
   //bancos
     Route::post('bank','BankController@store');
     Route::get('/bank/{id}','BankController@show');
-    Route::put('bank/{id}','BankController@update');
-    Route::delete('bank/{id}','BankController@destroy');
+    Route::put('/bank/{id}','BankController@update');
+    Route::delete('/bank/{id}','BankController@destroy');
 
   //servicios
     Route::get('/service/{id}','ServiceController@show');
