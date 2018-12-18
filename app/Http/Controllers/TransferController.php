@@ -11,7 +11,6 @@ class TransferController extends Controller
 {
 
     protected $user;
-    protected $algo= null;
 
   public function __construct(){
     $this->user = Auth::guard()->authenticate();
